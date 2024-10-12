@@ -34,7 +34,7 @@ array:
 task_last:
   KeReleaseSpinLockFromDpcLevel(&SpinLock);
   if ( write_cr3 )
-    __writecr3(qword_140078600);
+    __writecr3(clone_cr3);
   if ( possible_flush_tlb )
     flush_tlb();
   _enable();                                    // enabling interrupts
